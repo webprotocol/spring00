@@ -26,24 +26,18 @@ public class DeptSearchControllerTests {
 	
 	@Test
 	public void test02_getList() {
-		String html1 = restTemplate.getForObject("/dept", String.class);
+		String html1 = restTemplate.getForObject("/dept/list", String.class);
 		System.out.println(html1);
-		String html2 = restTemplate.getForObject("/dept/", String.class);
-		System.out.println(html2);
 	}
 	@Test
 	public void test03_getPage() {
-		String html1 = restTemplate.getForObject("/dept?pageNo={pageNo}", String.class, 1);
+		String html1 = restTemplate.getForObject("/dept/page/{pageNo}", String.class, 1);
 		System.out.println(html1);
-		String html2 = restTemplate.getForObject("/dept?pageNo={pageNo}", String.class, 2);
-		System.out.println(html2);
 	}
 	@Test
-	public void test04_getDept() {
-		String html1 = restTemplate.getForObject("/dept/{deptno}", String.class, 10);
+	public void test04_getItem() {
+		String html1 = restTemplate.getForObject("/dept/item/{deptno}", String.class, 10);
 		System.out.println(html1);
-		String html2 = restTemplate.getForObject("/dept/{deptno}", String.class, 20);
-		System.out.println(html2);
 	}	
 	
 

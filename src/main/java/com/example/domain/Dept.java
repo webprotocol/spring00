@@ -2,13 +2,20 @@ package com.example.domain;
 
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Dept {
 
 	private int deptno;
+	@NotNull
+	@Size(min=5)
 	private String dname;
+//	@NotNull
+	@Size(min=5)
 	private String loc;
 	
 	private List<Emp> emps;

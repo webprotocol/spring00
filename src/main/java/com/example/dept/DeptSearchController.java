@@ -3,6 +3,7 @@ package com.example.dept;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,7 +18,7 @@ public class DeptSearchController {
 	 * getList()
 	 * @return
 	 */
-	@RequestMapping(value={"", "/"}, method=RequestMethod.GET)
+	@GetMapping("/list")
 	public String getList() {
 		log.info("getList()");
 		
@@ -29,8 +30,8 @@ public class DeptSearchController {
 	 * @param pageNo
 	 * @return
 	 */
-	@RequestMapping(value={"", "/"}, method=RequestMethod.GET, params="pageNo")
-	public String getPage(int pageNo) {
+	@GetMapping("/page/{pageNo}")
+	public String getPage(@PathVariable int pageNo) {
 		log.info("pageNo=" + pageNo);
 		
 		return "dept/page";
@@ -41,8 +42,8 @@ public class DeptSearchController {
 	 * @param deptno
 	 * @return
 	 */
-	@RequestMapping(value="/{deptno}" , method=RequestMethod.GET)
-	public String getDept(@PathVariable int deptno) {
+	@GetMapping("/item/{deptno}")
+	public String getItem(@PathVariable int deptno) {
 		log.info("deptno=" + deptno);
 		
 		return "dept/dept";
