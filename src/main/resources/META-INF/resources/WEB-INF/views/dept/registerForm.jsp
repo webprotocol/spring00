@@ -21,7 +21,7 @@
 <body>
 <h1>Dept Register</h1>
 
-<form:form action="/dept/register" modelAttribute="deptForm">
+<form:form modelAttribute="deptForm">
 	<form:input path="deptno"/><form:errors path="deptno"/><br>
 	<form:input path="dname"/><form:errors path="dname"/><br>
 	<form:input path="loc"/><form:errors path="loc"/><br>

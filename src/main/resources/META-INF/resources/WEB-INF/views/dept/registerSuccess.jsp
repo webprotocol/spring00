@@ -19,11 +19,11 @@
 </head>
 <body>
 <h1>Dept RegisterSuccess</h1>
-<c:if test="${vo != null}">
-	<c:set var="vo" value="${vo}" scope="session"/>
+<c:if test="${deptForm != null}">
+	<c:set var="deptForm" value="${deptForm}" scope="session"/>
 </c:if>
 
-vo = ${vo}
+deptForm = ${deptForm}
 
 
 </body>

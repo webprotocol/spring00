@@ -42,7 +42,7 @@ public class DeptRegisterController extends WebMvcConfigurerAdapter {
 			return "dept/registerForm";
 		}
 		
-		redirect.addFlashAttribute("vo", "redirect hello");
+		redirect.addFlashAttribute("deptForm", deptForm);
 		return "redirect:/dept/registerSuccess";
 	}
 
