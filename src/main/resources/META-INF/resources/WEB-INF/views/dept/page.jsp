@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>list.jsp</title>
+<title>page.jsp</title>
 <!-- 1. animate -->
 <link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.min.css">
 <!-- 2. bootstrap -->
@@ -18,7 +18,7 @@
 <script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Dept One</h1>
+<h1>Dept Page</h1>
 
 </body>
 </html>

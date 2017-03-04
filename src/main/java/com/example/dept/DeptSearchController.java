@@ -13,18 +13,39 @@ public class DeptSearchController {
 	
 	static Log log = LogFactory.getLog(DeptSearchController.class);
 
+	/**
+	 * getList()
+	 * @return
+	 */
 	@RequestMapping(value={"", "/"}, method=RequestMethod.GET)
-	public String getPageList() {
-		log.info("################");
+	public String getList() {
+		log.info("getList()");
 		
 		return "dept/list";
 	}
+
+	/**
+	 * getPage()
+	 * @param pageNo
+	 * @return
+	 */
+	@RequestMapping(value={"", "/"}, method=RequestMethod.GET, params="pageNo")
+	public String getPage(int pageNo) {
+		log.info("pageNo=" + pageNo);
+		
+		return "dept/page";
+	}
 	
+	/**
+	 * getDept()
+	 * @param deptno
+	 * @return
+	 */
 	@RequestMapping(value="/{deptno}" , method=RequestMethod.GET)
 	public String getDept(@PathVariable int deptno) {
 		log.info("deptno=" + deptno);
 		
-		return "dept/one";
+		return "dept/dept";
 	}
 
 }
