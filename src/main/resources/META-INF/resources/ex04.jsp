@@ -20,9 +20,18 @@
 <link rel="stylesheet" href="/webjars/adminlte/2.3.11/dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="/webjars/adminlte/2.3.11/dist/css/skins/_all-skins.min.css">
 
+<!-- 1. jquery -->
+<script type="text/javascript" src="/webjars/jquery/2.2.3/jquery.min.js"></script>
+<!-- 2. bootstrap.js -->
+<script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<!-- 3. AdminLTE App -->
+<script src="/webjars/adminlte/2.3.11/dist/js/app.min.js"></script>
+
+<!-- 4. slimScroll -->
+<script src="/webjars/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
 <c:if test="false">
 <!-- Code Assist -->
-<!-- <link rel="stylesheet" href="WEB-INF/code_assist/animate.css"> -->
+<link rel="stylesheet" href="WEB-INF/code_assist/animate.css">
 <!-- <link rel="stylesheet" href="WEB-INF/code_assist/bootstrap.css"> -->
 <!-- <link rel="stylesheet" href="WEB-INF/code_assist/font-awesome.css"> -->
 <!-- <link rel="stylesheet" href="WEB-INF/code_assist/ionicons.css"> -->
@@ -44,7 +53,7 @@
 	<aside class="main-sidebar" style="background-color: green;">
 		<h1>Footer</h1>
 	</aside>
-	<div class="content-wrapper">
+	<div class="content-wrapper some-content-related-div">
 		<section class="content-header">
 			<h1>
 				Page Header <small>Optional description</small>
@@ -54,9 +63,30 @@
 				<li class="active">Here</li>
 			</ol>
 		</section>
-		<section class="content">
+		<section class="content inner-content-div animated wobble">
 		<!-- Your Page Content Here -->
 			<div class="info-box">
+		        <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+		        <div class="info-box-content">
+		          <span class="info-box-text">Messages</span>
+		          <span class="info-box-number">1,410</span>
+		        </div><!-- /.info-box-content -->
+	        </div>
+	        <div class="info-box">
+		        <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+		        <div class="info-box-content">
+		          <span class="info-box-text">Messages</span>
+		          <span class="info-box-number">1,410</span>
+		        </div><!-- /.info-box-content -->
+	        </div>
+	        <div class="info-box">
+		        <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+		        <div class="info-box-content">
+		          <span class="info-box-text">Messages</span>
+		          <span class="info-box-number">1,410</span>
+		        </div><!-- /.info-box-content -->
+	        </div>
+	        <div class="info-box">
 		        <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
 		        <div class="info-box-content">
 		          <span class="info-box-text">Messages</span>
@@ -77,15 +107,10 @@
 	
 </div>
 
-<!-- 1. jquery -->
-<script type="text/javascript" src="/webjars/jquery/2.2.3/jquery.min.js"></script>
-<!-- 2. bootstrap.js -->
-<script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-<!-- 3. AdminLTE App -->
-<script src="/webjars/adminlte/2.3.11/dist/js/app.min.js"></script>
+<script type="text/javascript">
 
-<!-- 4. slimScroll -->
-<script src="/webjars/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+$(function(){ $('#inner-content-div').slimScroll({ height: '500px' }); });
 
+</script>
 </body>
 </html>
