@@ -31,6 +31,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <c:if test="false">
+<!-- Code Assist -->
+<!-- <link rel="stylesheet" href="WEB-INF/code_assist/animate.css"> -->
+<!-- <link rel="stylesheet" href="WEB-INF/code_assist/bootstrap.css"> -->
+<!-- <link rel="stylesheet" href="WEB-INF/code_assist/font-awesome.css"> -->
+<!-- <link rel="stylesheet" href="WEB-INF/code_assist/ionicons.css"> -->
+<link rel="stylesheet" href="WEB-INF/code_assist/AdminLTE.css">
+<link rel="stylesheet" href="WEB-INF/code_assist/_all-skins.css">
+</c:if>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -52,7 +61,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-yellow sidebar-mini">
+<body class="fixed skin-yellow sidebar-mini ">
 <div class="wrapper">
 
   <!-- Main Header -->
