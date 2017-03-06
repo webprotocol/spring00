@@ -61,7 +61,13 @@ public class CountryMapperTests {
 	
 	@Test
 	public void test02_selectPageWithCity() {
+		Pagination paging = new Pagination();
+		paging.setTotalItem(mapper.selectTotalCount());
+		paging.setPageNo(20);
 		
+		List<Country> list = mapper.selectPageWithCity(paging);
+		for (Country c : list)
+			System.out.println(c);
 	}
 	
 	@Test
@@ -75,7 +81,7 @@ public class CountryMapperTests {
 	
 	@Test
 	public void test03_selectByCodeWithCity() {
-		Country country = mapper.selectByCodeWithCity("KOR");
+		Country country = mapper.selectByCodeWithCity("USA");
 		if (country == null) 
 			throw new NotFoundRuntimeException("country가 없습니다.");
 		

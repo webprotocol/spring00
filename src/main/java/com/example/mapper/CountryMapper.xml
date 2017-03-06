@@ -54,9 +54,24 @@
 	 where c1.code = 'KOR'	 
 </select>
 
-<select id="selectPageWithCity">
+<resultMap type="com.example.domain.Country" id="countryWithCityAuto">
+	<collection property="citys" column="country_code" select="selectCityById"/>
+</resultMap>
 
+<select id="selectPageWithCity" resultMap="countryWithCityAuto">
+	select c.*, 
+		   c.code as country_code
+	  from country c
+	 order by name
+	offset #{firstItem} - 1 rows
+	 fetch next #{itemsPerPage} rows only
 </select>
+<select id="selectCityById" resultType="com.example.domain.City">
+	select *
+	  from city
+	 where country_code = #{country_code}  
+</select>
+
 
 <select id="selectByCodeWithCity" resultMap="countryWithCity">
 	select 	c1.code				as country_code,
