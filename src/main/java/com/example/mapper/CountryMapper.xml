@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.CountryMapper">
 
-<resultMap type="com.example.domain.Country" id="countyWithCity">
+<resultMap type="com.example.domain.Country" id="countryWithCity">
 	<id 	property="code" 			column="country_code"/>
 	<result property="name" 			column="country_name"/>
 	<result property="continent" 		column="country_continent"/>
@@ -25,9 +25,10 @@
 		<result property="district"		column="city_district"/>
 		<result property="population"	column="city_population"/>
 	</collection>
+
 </resultMap>
 
-<select id="selectAllWithCity" resultMap="countyWithCity">
+<select id="selectAllWithCity" resultMap="countryWithCity">
 	select 	c1.code				as country_code,
 			c1.name				as country_name,
 			c1.continent		as country_continent,
@@ -50,17 +51,14 @@
 			c2.population		as city_population
 	  from country c1 left outer join city c2
 	    on c1.code = c2.country_code
-	 where c1.code = 'KOR'
+	 where c1.code = 'KOR'	 
 </select>
 
-<select id="selectPage" resultType="com.example.domain.Country">
-	select 	*
-	  from country
-	 offset #{paging.firstItem} - 1 rows
-	 fetch next #{paging.itemsPerPage} rows only
+<select id="selectPageWithCity">
+
 </select>
 
-<select id="selectPageWithCity" resultMap="countyWithCity">
+<select id="selectByCodeWithCity" resultMap="countryWithCity">
 	select 	c1.code				as country_code,
 			c1.name				as country_name,
 			c1.continent		as country_continent,
@@ -83,17 +81,8 @@
 			c2.population		as city_population
 	  from country c1 left outer join city c2
 	    on c1.code = c2.country_code
-	 where c1.code = 'KOR'
+	 where c1.code = #{code}  
+
 </select>
-
-
-
-
-
-
-
-
-
-
 
 </mapper>

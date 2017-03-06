@@ -25,7 +25,7 @@ public class Country {
 	private String code2;
 	private List<City> citys;
 	
-	
+
 	public List<City> getCitys() {
 		return citys;
 	}
