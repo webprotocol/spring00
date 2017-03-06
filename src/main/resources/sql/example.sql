@@ -14,3 +14,8 @@ select	e.empno		as emp_empno,
 		d.loc		as dept_loc
   from emp e left outer join dept d
     on e.deptno = d.deptno;
+	
+	select 	*
+	  from country
+	 offset 0 rows
+	 fetch next 10 rows only;
